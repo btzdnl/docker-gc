@@ -1,9 +1,11 @@
-# docker-gc
+# docker-gc (forked)
 
-[![Build Status](https://travis-ci.com/spotify/docker-gc.svg?branch=master)](https://travis-ci.com/spotify/docker-gc)
-[![License](https://img.shields.io/github/license/spotify/docker-client.svg)](LICENSE)
+## Status: forked
 
-## Status: mature
+I (Daniel) have forked this repo, just to build an updated Docker image, because the
+existing image is so out of date, it cannot talk to current Docker daemons.
+
+## Old content
 
 **We're not developing or accepting new features.**
 
