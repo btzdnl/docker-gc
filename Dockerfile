@@ -1,15 +1,9 @@
-FROM alpine:3.10
+FROM alpine:3.23
 
-ENV DOCKER_VERSION 18.09.6
+RUN apk --no-cache add bash docker-cli
 
-RUN apk --no-cache add bash \
-  && wget -q https://download.docker.com/linux/static/stable/x86_64/docker-${DOCKER_VERSION}.tgz \
-  && tar zxf docker-${DOCKER_VERSION}.tgz \
-  && mv docker/docker /usr/local/bin/ \
-  && rm -rf docker/ docker-${DOCKER_VERSION}.tgz
-
-COPY ./docker-gc /docker-gc
+COPY ./docker-gc.sh /docker-gc.sh
 
 VOLUME /var/lib/docker-gc
 
-CMD ["/docker-gc"]
+CMD ["/bin/bash", "/docker-gc.sh"]
